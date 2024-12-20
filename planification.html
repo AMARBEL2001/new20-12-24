@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism Plan Input</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .suggestion-bubble {
+            display: inline-block;
+            padding: 0.5em 1em;
+            margin: 0.2em;
+            font-size: 0.9rem;
+            border-radius: 20px;
+            border: 1px solid var(--bs-primary);
+            color: var(--bs-primary);
+            background-color: var(--bs-light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            /* Change font family to a sans-serif font */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .suggestion-bubble.active {
+            background-color: var(--bs-primary);
+            color: var(--bs-light);
+        }
+
+        .suggestion-bubble:hover {
+            background-color: var(--bs-primary);
+            color: var(--bs-light);
+        }
+
+        /* Optional: Add more specific font styling using Bootstrap classes */
+        .form-label {
+            font-weight: 600;
+            /* Slightly bolder labels */
+        }
+
+        .card-title {
+            font-weight: 500;
+            /*  Slightly less bold title */
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container my-5">
+        <div class="card p-4">
+            <h1 class="text-center mb-4 card-title">Plan Your Visit</h1>
+            <form id="planningForm" class="needs-validation"  novalidate>
+
+                <!-- Trip Information -->
+                <div class="mb-3">
+                    <label for="tripDates" class="form-label">Select Your Travel Dates</label>
+                    <div class="row g-2">
+                        <div class="col-md-6">
+                            <input type="date" class="form-control" id="startDate" name="startDate" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="date" class="form-control" id="endDate" name="endDate" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="budget" class="form-label">Budget (in your currency)</label>
+                    <input type="number" class="form-control" id="budget" name="budget" min="0"
+                        placeholder="Enter your budget" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="destination" class="form-label">Destination(s)</label>
+                    <div class="d-flex flex-wrap">
+                        <span class="suggestion-bubble" data-value="Afir">Afir</span>
+                        <span class="suggestion-bubble" data-value="Ammal">Ammal</span>
+                        <span class="suggestion-bubble" data-value="Baghlia">Baghlia</span>
+                        <span class="suggestion-bubble" data-value="Ben Choud">Ben Choud</span>
+                        <span class="suggestion-bubble" data-value="Beni Amrane">Beni Amrane</span>
+                        <span class="suggestion-bubble" data-value="Bordj Menaïel">Bordj Menaïel</span>
+                        <span class="suggestion-bubble" data-value="Boudouaou">Boudouaou</span>
+                        <span class="suggestion-bubble" data-value="Boudouaou El Bahri">Boudouaou El Bahri</span>
+                        <span class="suggestion-bubble" data-value="Boumerdès">Boumerdès</span>
+                        <span class="suggestion-bubble" data-value="Bouzegza Keddara">Bouzegza Keddara</span>
+                        <span class="suggestion-bubble" data-value="Chabet el Ameur">Chabet el Ameur</span>
+                        <span class="suggestion-bubble" data-value="Corso">Corso</span>
+                        <span class="suggestion-bubble" data-value="Dellys">Dellys</span>
+                        <span class="suggestion-bubble" data-value="Djinet">Djinet</span>
+                        <span class="suggestion-bubble" data-value="El Kharrouba">El Kharrouba</span>
+                        <span class="suggestion-bubble" data-value="Hammedi">Hammedi</span>
+                        <span class="suggestion-bubble" data-value="Isser">Isser</span>
+                        <span class="suggestion-bubble" data-value="Khemis El Khechna">Khemis El Khechna</span>
+                        <span class="suggestion-bubble" data-value="Larbatache">Larbatache</span>
+                        <span class="suggestion-bubble" data-value="Leghata">Leghata</span>
+                        <span class="suggestion-bubble" data-value="Naciria">Naciria</span>
+                        <span class="suggestion-bubble" data-value="Ouled Aïssa">Ouled Aïssa</span>
+                        <span class="suggestion-bubble" data-value="Ouled Hedadj">Ouled Hedadj</span>
+                        <span class="suggestion-bubble" data-value="Ouled Moussa">Ouled Moussa</span>
+                        <span class="suggestion-bubble" data-value="Si Mustapha">Si Mustapha</span>
+                        <span class="suggestion-bubble" data-value="Sidi Daoud">Sidi Daoud</span>
+                        <span class="suggestion-bubble" data-value="Souk El Had">Souk El Had</span>
+                        <span class="suggestion-bubble" data-value="Taourga">Taourga</span>
+                        <span class="suggestion-bubble" data-value="Thénia">Thénia</span>
+                        <span class="suggestion-bubble" data-value="Tidjelabine">Tidjelabine</span>
+                        <span class="suggestion-bubble" data-value="Timezrit">Timezrit</span>
+                        <span class="suggestion-bubble" data-value="Zemmouri">Zemmouri</span>
+
+                    </div>
+                </div>
+
+                <!-- Preferences -->
+                <div class="mb-3">
+                    <label class="form-label">Your Preferences</label>
+                    <div class="d-flex flex-wrap"><span class="suggestion-bubble"
+                            data-value="budget-friendly">Budget-Friendly Travel</span>
+                        <span class="suggestion-bubble" data-value="luxury">Luxury Experiences</span>
+                        <span class="suggestion-bubble" data-value="cultural-immersion">Authentic Cultural
+                            Immersion</span>
+                        <span class="suggestion-bubble" data-value="adventure">Adventure Activities</span>
+                        <span class="suggestion-bubble" data-value="relaxation">Relaxation and Wellness</span>
+                        <span class="suggestion-bubble" data-value="nature">Nature and Wildlife Encounters</span>
+                        <span class="suggestion-bubble" data-value="historical">Historical and Archaeological
+                            Sites</span>
+                        <span class="suggestion-bubble" data-value="foodie">Foodie Experiences</span>
+                        <span class="suggestion-bubble" data-value="beach">Beach and Coastal Destinations</span>
+                        <span class="suggestion-bubble" data-value="city">City Exploration</span>
+                        <span class="suggestion-bubble" data-value="sustainable">Sustainable and Eco-Friendly
+                            Travel</span>
+                        <span class="suggestion-bubble" data-value="family-friendly">Family-Friendly Activities</span>
+                        <span class="suggestion-bubble" data-value="solo">Solo Travel</span>
+                        <span class="suggestion-bubble" data-value="group-tours">Group Tours</span>
+                        <span class="suggestion-bubble" data-value="fast-paced">Fast-Paced Sightseeing</span>
+                        <span class="suggestion-bubble" data-value="slow-travel">Slow Travel</span>
+                        <span class="suggestion-bubble" data-value="off-the-beaten-path">Off-the-Beaten-Path
+                            Destinations</span>
+                        <span class="suggestion-bubble" data-value="public-transportation">Easy Access to Public
+                            Transportation</span>
+                        <span class="suggestion-bubble" data-value="wifi">Free Wi-Fi Access</span>
+                        <span class="suggestion-bubble" data-value="safety">Safety and Security</span>
+                    </div>
+                    <input type="hidden" id="preferences" name="preferences" value="">
+                </div>
+
+                <!-- Submit Button -->
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Toggle selection on suggestion bubbles
+        const bubbles = document.querySelectorAll('.suggestion-bubble');
+        const preferencesInput = document.getElementById('preferences');
+
+        bubbles.forEach(bubble => {
+            bubble.addEventListener('click', () => {
+                bubble.classList.toggle('active');
+
+                // Update hidden input value
+                const selectedPreferences = Array.from(bubbles)
+                    .filter(b => b.classList.contains('active'))
+                    .map(b => b.getAttribute('data-value'));
+                preferencesInput.value = selectedPreferences.join(', ');
+            });
+        });
+
+        // Handle form validation
+        document.getElementById('planningForm').addEventListener('submit', function (event) {
+            if (!this.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+                alert('Please fill out all required fields!');
+            } else {
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const startDate = document.getElementById('startDate').value;
+                const endDate = document.getElementById('endDate').value;
+                const budget = document.getElementById('budget').value;
+                const destination = document.getElementById('destination').value;
+                const preferences = preferencesInput.value;
+
+                alert(`Plan Details:\n- Name: ${name}\n- Email: ${email}\n- Start Date: ${startDate}\n- End Date: ${endDate}\n- Budget: ${budget}\n- Destination: ${destination}\n- Preferences: ${preferences}`);
+            }
+
+            this.classList.add('was-validated');
+        });
+    </script>
+
+</body>
+
+</html>
